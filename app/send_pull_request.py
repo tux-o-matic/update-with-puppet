@@ -72,6 +72,6 @@ if __name__ == '__main__':
     else:
         working_branch = 'OS_Update_' + datetime.datetime.now().strftime("%B_%Y") + '_' + conf['GIT']['src_branch']
 
-    create_pr(conf['PR']['api_url'], conf['GIT']['email'],conf['GIT']['password'], conf['General']['proxy'],
+    create_pr(conf['PR']['api_url'], conf['GIT']['email'], conf['GIT']['password'], conf['General']['proxy'],
               working_branch, conf['GIT']['dest_branch'], conf['PR']['description'],
               conf['PR']['reviewers'], conf['PR']['title'], conf['GIT']['account_name'], conf['GIT']['repo_name'])

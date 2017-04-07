@@ -22,7 +22,7 @@ pkg_requiring_reboot = ['glibc', 'hal', 'kernel', 'kernel-firmware', 'linux-firm
 
 def get_linux_dist():
     if sys.version_info[0] >= 3 and sys.version_info[1] > 6:
-        raise NotImplementedError # 'distro' module returns different names
+        raise NotImplementedError  # 'distro' module returns different names
     else:
         return platform.linux_distribution()
 
@@ -85,8 +85,8 @@ if __name__ == '__main__':
         os.environ['https_proxy'] = conf['General']['proxy']
 
     if not local_repo_exists:
-        assembled_git_url = conf['GIT']['url'].replace('https://', 'https://' + conf['GIT']['user']
-                                                           + ':' + conf['GIT']['password'] + '@')
+        assembled_git_url = conf['GIT']['url'].replace('https://', 'https://' + conf['GIT']['user'] + ':' +
+                                                       conf['GIT']['password'] + '@')
         print(subprocess.Popen(['git', 'clone', assembled_git_url],
                                cwd=conf['General']['cwd'], stdout=cmd_out).communicate()[0])
 

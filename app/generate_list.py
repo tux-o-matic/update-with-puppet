@@ -27,7 +27,7 @@ multi_ver_pkg = ['kernel', 'kernel-devel']
 
 def get_linux_dist():
     if sys.version_info[0] >= 3 and sys.version_info[1] > 6:
-        raise NotImplementedError # 'distro' module returns different names
+        raise NotImplementedError  # 'distro' module returns different names
     else:
         return platform.linux_distribution()
 
