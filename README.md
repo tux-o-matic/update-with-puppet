@@ -13,6 +13,10 @@ A list of [Puppet Package](https://docs.puppet.com/puppet/latest/type.html#packa
 This list can be committed to a GIT repository where your Puppet configuration is.
 You're then free to have those Package resources updated by Puppet.
 
+## Use Case
+Schedule a [CRON](https://docs.puppet.com/puppet/latest/type.html#cron) job on a node or pool of servers.
+This tool will collect packages to update and create a GIT PR to be reviewed, eventually edited, and finally merged in your Puppet configuration to have the packages updated during the next Puppet run. 
+
 ## OS Support
 - RPM based Linux: RHEL, Centos, Scientific, older Fedora,...
 - DNF based Linux: newer Fedora.
