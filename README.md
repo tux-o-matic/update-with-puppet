@@ -1,4 +1,6 @@
-# Update with Puppet
+# Update with Puppet 
+[![Build Status](https://travis-ci.org/DanskSupermarked/update-with-puppet.svg?branch=master)](https://travis-ci.org/DanskSupermarked/update-with-puppet)
+
 Would like to know which packages should be updated on a node?
 
 Would like that list of packages to be fed directly to Puppet?
