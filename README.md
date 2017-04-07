@@ -24,6 +24,7 @@ You're then free to have those Package resources updated by Puppet.
 ## TODO
 - Publish Puppet module to manage setup and CRON job.
 - Support other package providers.
+- Support creation of resource list as Yaml or .pp files.
 - Support other GIT hosting API for PR.
 
 #### Copyright
