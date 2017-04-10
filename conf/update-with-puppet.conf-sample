@@ -31,5 +31,6 @@ wrap=true
 [PR]
 api_url=https://api.bitbucket.org/2.0/repositories/git_account_name/git_repo_name/pullrequests
 description=
+generate=true
 reviewers=
 title=

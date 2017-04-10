@@ -145,27 +145,31 @@ if __name__ == '__main__':
     print(subprocess.Popen(['git', 'push', '-u', 'origin', working_branch],
                            cwd=local_repo_path, stdout=cmd_out).communicate()[0])
 
-    pr_exists = False
-
     try:
-        from urllib.request import urlopen, Request
-        from urllib.error import HTTPError
-    except ImportError:
-        from urllib2 import urlopen, Request, HTTPError
+        if conf.getboolean('PR', 'generate'):
+            pr_exists = False
 
-    b64auth = base64.b64encode('%s:%s' % (conf['GIT']['user'], conf['GIT']['password']))
-    request = Request(conf['PR']['api_url'] + '?state=OPEN')
-    request.add_header("Authorization", "Basic %s" % b64auth)
-    response = urlopen(request).read()
-    try:
-        if conf['PR']['title'] in response.decode('utf-8'):
-            pr_exists = True
-    except Exception as e:
-        print(str(e))
-        if str(conf['PR']['title']) in str(response):
-            pr_exists = True
+            try:
+                from urllib.request import urlopen, Request
+                from urllib.error import HTTPError
+            except ImportError:
+                from urllib2 import urlopen, Request, HTTPError
 
-    if not pr_exists and os.path.exists(working_file):
-        send_pull_request = os.path.join(os.path.dirname(os.path.realpath(__file__)), 'send_pull_request.py')
-        send_pull_request_cmd = ['python', send_pull_request, '-c', args.conf_file]
-        print(subprocess.Popen(send_pull_request_cmd, stdout=cmd_out).communicate()[0])
+            b64auth = base64.b64encode('%s:%s' % (conf['GIT']['user'], conf['GIT']['password']))
+            request = Request(conf['PR']['api_url'] + '?state=OPEN')
+            request.add_header("Authorization", "Basic %s" % b64auth)
+            response = urlopen(request).read()
+            try:
+                if conf['PR']['title'] in response.decode('utf-8'):
+                    pr_exists = True
+            except Exception as e:
+                print(str(e))
+                if str(conf['PR']['title']) in str(response):
+                    pr_exists = True
+
+            if not pr_exists and os.path.exists(working_file):
+                send_pull_request = os.path.join(os.path.dirname(os.path.realpath(__file__)), 'send_pull_request.py')
+                send_pull_request_cmd = ['python', send_pull_request, '-c', args.conf_file]
+                print(subprocess.Popen(send_pull_request_cmd, stdout=cmd_out).communicate()[0])
+    except ValueError as e:
+        print('Invalid or missing value for PR/generate')
