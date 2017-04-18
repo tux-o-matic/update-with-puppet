@@ -10,8 +10,11 @@ Then this is the tool for you.
 ## How it Works
 This program will fetch from the package provider the updates available for the specified package repositories.
 A list of [Puppet Package](https://docs.puppet.com/puppet/latest/type.html#package) resource will be generated (For now as Hiera JSON).
+Some packages and their associated libs should be updated as once and for this they will be updated as an Exec resource created along the Package resources.
+
 This list can be committed to a GIT repository where your Puppet configuration is.
 You're then free to have those Package resources updated by Puppet.
+
 
 ## Use Case
 Schedule a [CRON](https://docs.puppet.com/puppet/latest/type.html#cron) job on a node or pool of servers.
@@ -30,6 +33,7 @@ This tool will collect packages to update and create a GIT PR to be reviewed, ev
 - Support other package providers.
 - Support creation of resource list as Yaml or .pp files.
 - Support other GIT hosting API for PR.
+- Load package bundle list outside of code.
 
 #### Copyright
 

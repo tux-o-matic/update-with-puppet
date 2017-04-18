@@ -14,13 +14,16 @@ __license__ = "GPL version 3"
 package_provider_name = 'yum'
 
 package_bundle = {'bind': ['bind', 'bind-libs', 'bind-libs-lite', 'bind-license', 'bind-utils'],
+                  'gcc': ['gcc', 'libgcc', 'libfortran', 'libgomp'],
+                  'glibc': ['glibc', 'glibc-common', 'glibc-devel', 'glibc-headers', 'nscd'],
                   'networkmanager': ['NetworkManager', 'NetworkManager-config-server', 'NetworkManager-libnm',
                                      'NetworkManager-team', 'NetworkManager-tui'],
+                  'nss': ['nss', 'nss-sysinit', 'nss-tools', 'nss-util', 'nss-util-devel'],
                   'sssd': ['libipa_hbac', 'libsss_idmap', 'python-libipa_hbac', 'python-sssdconfig', 'sssd', 'sssd-ad',
                            'sssd-client', 'sssd-common', 'sssd-common-pac', 'sssd-ipa', 'sssd-krb5', 'sssd-krb5-common',
                            'sssd-ldap', 'sssd-proxy'],
-                  'systemd': ['libgudev1', 'libudev',
-                              'systemd', 'systemd-libs', 'systemd-python', 'systemd-sysv', 'udev']}
+                  'systemd': ['libgudev1', 'libudev', 'systemd', 'systemd-libs', 'systemd-python', 'systemd-sysv',
+                              'udev']}
 
 multi_ver_pkg = ['kernel', 'kernel-devel']
 
