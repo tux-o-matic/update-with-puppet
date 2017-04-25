@@ -7,7 +7,7 @@ proxy=
 [GIT]
 account_name=
 dest_branch=environment_branch
-email=<
+email=
 name=
 password=
 url=
@@ -19,6 +19,7 @@ work_branch=package_update
 
 [Package]
 bundle=true
+bundle_list=/etc/update-with-puppet/package_bundle.json
 install_from_cache=false
 merge=true
 pkg_repos=rhel-7-server-rpms
