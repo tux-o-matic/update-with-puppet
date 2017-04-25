@@ -12,7 +12,7 @@ import socket
 import subprocess
 import sys
 
-__author__ = 'Benjamin Merot'
+__author__ = 'Benjamin Merot <benjamin.merot@dsg.dk>'
 __copyright__ = "Copyright (C) 2017 Dansk Supermarked Group"
 __license__ = "GPL version 3"
 
