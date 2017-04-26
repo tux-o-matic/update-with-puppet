@@ -13,18 +13,6 @@ __license__ = "GPL version 3"
 
 package_provider_name = 'yum'
 
-package_bundle = {'bind': ['bind', 'bind-libs', 'bind-libs-lite', 'bind-license', 'bind-utils'],
-                  'gcc': ['gcc', 'libgcc', 'libfortran', 'libgomp'],
-                  'glibc': ['glibc', 'glibc-common', 'glibc-devel', 'glibc-headers', 'nscd'],
-                  'networkmanager': ['NetworkManager', 'NetworkManager-config-server', 'NetworkManager-libnm',
-                                     'NetworkManager-team', 'NetworkManager-tui'],
-                  'nss': ['nss', 'nss-sysinit', 'nss-tools', 'nss-util', 'nss-util-devel'],
-                  'sssd': ['libipa_hbac', 'libsss_idmap', 'python-libipa_hbac', 'python-sssdconfig', 'sssd', 'sssd-ad',
-                           'sssd-client', 'sssd-common', 'sssd-common-pac', 'sssd-ipa', 'sssd-krb5', 'sssd-krb5-common',
-                           'sssd-ldap', 'sssd-proxy'],
-                  'systemd': ['libgudev1', 'libudev', 'systemd', 'systemd-libs', 'systemd-python', 'systemd-sysv',
-                              'udev']}
-
 multi_ver_pkg = ['kernel', 'kernel-devel']
 
 
@@ -133,10 +121,7 @@ def merge_resources(existing_file, new_resources, root_key):
         return merged_resources
 
 
-def bundle_package(resources, root_key):
-    """
-    :rtype: dict
-    """
+def bundle_package(resources, root_key, package_bundle):
     packages = resources
     execs = {}
 
@@ -229,7 +214,14 @@ if __name__ == '__main__':
                     resources = strip_resources(base_file, working_file, root_key)
 
         if not (conf.has_option('Package', 'bundle') and not conf.getboolean('Package', 'bundle')):
-            resources = bundle_package(resources, root_key)
+            package_bundle = {}
+            try:
+                if conf.has_option('Package', 'bundle_list'):
+                    with open(conf['Package']['bundle_list']) as json_file:
+                        package_bundle = json.load(json_file)
+            except Exception as e:
+                pass
+            resources = bundle_package(resources, root_key, package_bundle)
 
         if conf.has_option('Package', 'save') and conf.getboolean('Package', 'save') and working_file:
             with open(working_file, 'w') as outfile:
