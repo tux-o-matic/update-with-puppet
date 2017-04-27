@@ -29,11 +29,9 @@ This tool will collect packages to update and create a GIT PR to be reviewed, ev
 - BitBucket API for pull request creation.
 
 ## TODO
-- Publish Puppet module to manage setup and CRON job.
 - Support other package providers.
 - Support creation of resource list as Yaml or .pp files.
 - Support other GIT hosting API for PR.
-- Load package bundle list outside of code.
 
 #### Copyright
 
