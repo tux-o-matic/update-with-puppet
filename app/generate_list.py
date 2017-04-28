@@ -13,7 +13,7 @@ __license__ = "GPL version 3"
 
 package_provider_name = 'yum'
 
-multi_ver_pkg = ['kernel', 'kernel-devel']
+multi_ver_pkg = ['kernel', 'kernel-core', 'kernel-devel', 'kernel-modules']
 
 
 def get_linux_dist():
