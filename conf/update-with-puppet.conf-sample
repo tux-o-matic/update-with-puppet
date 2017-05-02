@@ -21,6 +21,7 @@ work_branch=package_update
 bundle=true
 bundle_list=/etc/update-with-puppet/package_bundle.json
 install_from_cache=false
+install_multilib=true
 merge=true
 pkg_repos=rhel-7-server-rpms
 repo_in_resource=false

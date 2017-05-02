@@ -13,6 +13,7 @@ __license__ = "GPL version 3"
 
 package_provider_name = 'yum'
 
+multilib_pkg = {'glibc': ['i686', 'x86_64'], 'glibc-devel': ['i686', 'x86_64'], 'libgcc': ['i686', 'x86_64']}
 multi_ver_pkg = ['kernel', 'kernel-core', 'kernel-devel', 'kernel-modules']
 
 
@@ -121,6 +122,19 @@ def merge_resources(existing_file, new_resources, root_key):
         return merged_resources
 
 
+def get_pkg_fqdn(pkg_name, pkg_version):
+    try:
+        if conf.getboolean('Package', 'install_multilib') and conf.getboolean('Package', 'install_multilib'):
+            if pkg_name in multilib_pkg:
+                exec_cmd = ''
+                for lib_variant in multilib_pkg[pkg_name]:
+                    exec_cmd += ' ' + pkg_name + '-' + pkg_version + '.' + lib_variant
+                return exec_cmd
+    except Exception as e:
+        pass
+    return ' ' + pkg_name + '-' + pkg_version
+
+
 def bundle_package(resources, root_key, package_bundle):
     packages = resources
     execs = {}
@@ -133,9 +147,9 @@ def bundle_package(resources, root_key, package_bundle):
             if pkg in package_bundle[bundle]:
                 exec_key = 'update_' + bundle
                 if exec_key in execs:
-                    execs[exec_key]['command'] += ' ' + pkg + '-' + packages[pkg]['ensure']
+                    execs[exec_key]['command'] += get_pkg_fqdn(pkg, packages[pkg]['ensure'])
                 else:
-                    command = package_provider_name + ' -y install ' + pkg + '-' + packages[pkg]['ensure']
+                    command = package_provider_name + ' -y install' + get_pkg_fqdn(pkg, packages[pkg]['ensure'])
                     execs.update({exec_key: {'command': command, 'path': '/bin:/usr/bin/',
                                              'unless': 'rpm -q ' + pkg + '-' + packages[pkg]['ensure']}})
                 packages[pkg]['require'] = 'Exec[' + exec_key + ']'
