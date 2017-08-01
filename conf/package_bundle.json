@@ -19,6 +19,16 @@
     "glibc-headers",
     "nscd"
   ],
+  "gnutls: [
+    "gnutls",
+    "libtasn1"
+  ],
+  "grub2": [
+    "grub2",
+    "grub2-common",
+    "grub2-efi",
+    "grub2-tools"
+  ],
   "networkmanager": [
     "NetworkManager",
     "NetworkManager-config-server",
