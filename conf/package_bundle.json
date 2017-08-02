@@ -1,10 +1,61 @@
 {
+  "abrt": [
+    "abrt",
+    "abrt-addon-ccpp",
+    "abrt-addon-kerneloops",
+    "abrt-addon-pstoreoops",
+    "abrt-addon-python",
+    "abrt-addon-vmcore",
+    "abrt-addon-xorg",
+    "abrt-cli",
+    "abrt-console-notification",
+    "abrt-dbus",
+    "abrt-libs",
+    "abrt-python",
+    "abrt-tui"
+  ],
+  "audit": [
+    "audit",
+    "audit-libs"
+  ],
   "bind": [
     "bind",
     "bind-libs",
     "bind-libs-lite",
     "bind-license",
     "bind-utils"
+  ],
+  "cronie": [
+    "cronie",
+    "cronie-anacron"
+  ],
+  "cryptsetup": [
+    "cryptsetup",
+    "cryptsetup-libs"
+  ],
+  "cyrus-sasl-lib": [
+    "cyrus-sasl-lib",
+    "cyrus-sasl-plain"
+  ],
+  "device-mapper": [
+    "device-mapper",
+    "device-mapper-event",
+    "device-mapper-event-libs",
+    "device-mapper-libs"
+  ],
+  "dhclient": [
+    "dhclient",
+    "dhcp-common",
+    "dhcp-libs"
+  ],
+  "dracut": [
+    "dracut",
+    "dracut-config-rescue",
+    "dracut-network"
+  ],
+  "e2fsprogs": [
+    "e2fsprogs",
+    "e2fsprogs-libs"
   ],
   "gcc": [
     "gcc",
@@ -33,14 +84,21 @@
     "kmod",
     "kmod-libs"
   ],
-  "krb5": [
-    "krb5",
+  "krb5-libs": [
     "krb5-libs",
     "krb5-workstation"
+  ],
+  "libcgroup": [
+    "libcgroup",
+    "libcgroup-tools"
   ],
   "libdb": [
     "libdb",
     "libdb-utils"
+  ],
+  "libnl3": [
+    "libnl3",
+    "libnl3-cli"
   ],
   "libreport": [
     "libreport",
@@ -52,6 +110,10 @@
     "libreport-python",
     "libreport-rhel",
     "libreport-web"
+  ],
+  "lvm2": [
+    "lvm2",
+    "lvm2-libs"
   ],
   "networkmanager": [
     "NetworkManager",
@@ -66,6 +128,57 @@
     "nss-tools",
     "nss-util",
     "nss-util-devel"
+  ],
+  "openssh": [
+    "openssh",
+    "openssh-clients",
+    "openssh-server"
+  ],
+  "openssl": [
+    "openssl",
+    "openssl-libs"
+  ],
+  "pcp-conf": [
+    "pcp-conf",
+    "pcp-doc",
+    "pcp-libs",
+    "pcp-pmda-bash",
+    "pcp-pmda-bonding",
+    "pcp-pmda-dm",
+    "pcp-pmda-gpfs",
+    "pcp-pmda-gpsd",
+    "pcp-pmda-lmsensors",
+    "pcp-pmda-logger",
+    "pcp-pmda-mounts",
+    "pcp-pmda-named",
+    "pcp-pmda-netfilter",
+    "pcp-pmda-nfsclient",
+    "pcp-pmda-nginx",
+    "pcp-pmda-shping",
+    "pcp-pmda-trace",
+    "perl-PCP-PMDA"
+  ],
+  "plymouth": [
+    "plymouth",
+    "plymouth-core-libs",
+    "plymouth-scripts"
+  ],
+  "python": [
+    "python",
+    "python-devel",
+    "python-libs"
+  ],
+  "rpm": [
+    "rpm",
+    "rpm-build",
+    "rpm-build-libs",
+    "rpm-libs",
+    "rpm-python",
+    "rpm-sign"
+  ],
+  "ruby": [
+    "ruby",
+    "ruby-libs"
   ],
   "sssd": [
     "libipa_hbac",
@@ -91,5 +204,11 @@
     "systemd-python",
     "systemd-sysv",
     "udev"
+  ],
+  "vim-common": [
+    "vim-common",
+    "vim-enhanced",
+    "vim-filesystem",
+    "vim-minimal"
   ]
 }
