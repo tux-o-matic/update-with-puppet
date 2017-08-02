@@ -19,7 +19,7 @@
     "glibc-headers",
     "nscd"
   ],
-  "gnutls: [
+  "gnutls": [
     "gnutls",
     "libtasn1"
   ],
