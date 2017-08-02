@@ -13,8 +13,8 @@ __license__ = "GPL version 3"
 
 package_provider_name = 'yum'
 
-multilib_pkg = {'glibc': ['i686', 'x86_64'], 'glibc-devel': ['i686', 'x86_64'], 'libgcc': ['i686', 'x86_64'],
-                'libstdc++': ['i686', 'x86_64']}
+multilib_pkg = {'glibc': ['i686', 'x86_64'], 'glibc-devel': ['i686', 'x86_64'], 'gnutls': ['x86_64'],
+                'libgcc': ['i686', 'x86_64'], 'libstdc++': ['i686', 'x86_64']}
 multi_ver_pkg = ['kernel', 'kernel-core', 'kernel-devel', 'kernel-modules']
 
 
