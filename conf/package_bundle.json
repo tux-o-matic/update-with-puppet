@@ -29,6 +29,30 @@
     "grub2-efi",
     "grub2-tools"
   ],
+  "kmod": [
+    "kmod",
+    "kmod-libs"
+  ],
+  "krb5": [
+    "krb5",
+    "krb5-libs",
+    "krb5-workstation"
+  ],
+  "libdb": [
+    "libdb",
+    "libdb-utils"
+  ],
+  "libreport": [
+    "libreport",
+    "libreport-cli",
+    "libreport-filesystem",
+    "libreport-plugin-mailx",
+    "libreport-plugin-rhtsupport",
+    "libreport-plugin-ureport",
+    "libreport-python",
+    "libreport-rhel",
+    "libreport-web"
+  ],
   "networkmanager": [
     "NetworkManager",
     "NetworkManager-config-server",
