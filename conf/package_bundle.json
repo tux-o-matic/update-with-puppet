@@ -185,6 +185,8 @@
     "libsss_idmap",
     "python-libipa_hbac",
     "python-sssdconfig",
+    "python2-sssdconfig",
+    "python3-sssdconfig",
     "sssd",
     "sssd-ad",
     "sssd-client",
