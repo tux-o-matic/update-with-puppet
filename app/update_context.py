@@ -53,7 +53,7 @@ if __name__ == '__main__':
         print("Python 3's configparser or its backport to Python 2 is needed")  # ver. < 3.0
     conf = ConfigParser()
 
-    support_distros = ['CentOS', 'Fedora', 'Red Hat Enterprise Linux Server']
+    support_distros = ['CentOS Linux', 'Fedora', 'Red Hat Enterprise Linux Server']
     if platform.system() != 'Linux' or get_linux_dist()[0] not in support_distros:
         raise OSError('This OS is not supported')
     default_file_name = get_linux_dist()[0] + '_' + get_linux_dist()[1] + '.json'
