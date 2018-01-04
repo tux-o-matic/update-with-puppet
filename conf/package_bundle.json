@@ -179,6 +179,7 @@
   "ruby": [
     "ruby",
     "ruby-devel",
+    "ruby-irb",
     "ruby-libs"
   ],
   "sssd": [
