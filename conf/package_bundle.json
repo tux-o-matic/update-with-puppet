@@ -76,6 +76,7 @@
   ],
   "gnutls": [
     "gnutls",
+    "gnutls-utils",
     "libtasn1"
   ],
   "grub2": [
