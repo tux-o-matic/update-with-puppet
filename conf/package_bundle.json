@@ -62,8 +62,10 @@
     "libfortran",
     "libgcc",
     "libgomp",
+    "libgfortran",
     "libquadmath",
-    "libquadmath-devel"
+    "libquadmath-devel",
+    "libstdc++"
   ],
   "glibc": [
     "glibc",
