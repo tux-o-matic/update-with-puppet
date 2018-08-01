@@ -105,8 +105,12 @@
   "libreport": [
     "libreport",
     "libreport-cli",
+    "libreport-compat",
     "libreport-filesystem",
+    "libreport-plugin-kerneloops",
+    "libreport-plugin-logger",
     "libreport-plugin-mailx",
+    "libreport-plugin-reportuploader",
     "libreport-plugin-rhtsupport",
     "libreport-plugin-ureport",
     "libreport-python",
