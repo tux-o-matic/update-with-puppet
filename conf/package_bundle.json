@@ -194,6 +194,7 @@
     "libipa_hbac",
     "libsss_idmap",
     "python-libipa_hbac",
+    "python-sss-murmur",
     "python-sssdconfig",
     "python2-sssdconfig",
     "python3-sssdconfig",
