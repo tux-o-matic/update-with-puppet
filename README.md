@@ -10,7 +10,7 @@ Then this is the tool for you.
 ## How it Works
 This program will fetch from the package provider the updates available for the specified package repositories.
 A list of [Puppet Package](https://docs.puppet.com/puppet/latest/type.html#package) resource will be generated (For now as Hiera JSON).
-Some packages and their associated libs should be updated as once and for this they will be updated as an Exec resource created along the Package resources.
+Some packages and their associated libs should be updated in one transaction and for this they will be updated as an Exec resource created along the Package resources.
 
 This list can be committed to a GIT repository where your Puppet configuration is.
 You're then free to have those Package resources updated by Puppet.
